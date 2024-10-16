@@ -1,7 +1,7 @@
 @extends('backend.app')
 
 @section('content')
-    <div class="container pt-5">
+    <div class="content-wrapper pt-5 px-5">
         <!-- About Content Section -->
         <div class="row mt-5">
             <div class="col-md-12">

@@ -36,6 +36,10 @@
     <link rel="stylesheet" href="{{ asset('frontend/app.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/service.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/responsive.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/responsive.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/main.scss') }}">
+
     @yield('head-styles')
 </head>
 

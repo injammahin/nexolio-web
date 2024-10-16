@@ -105,7 +105,7 @@ Route::view('/privacy-policy', 'frontend.partial.privacy-policy')->name('privacy
     Route::get('/services/digital-marketing-agency', function () {
         return view('frontend.services.digital-marketing-agency');
     })->name('services.digital-marketing-agency');
-  
+
     // services////////////////////////
     Route::get('/services/digital-transformation', [PageController::class, 'digitalTransformation'])->name('services.digital-transformation');
 // In routes/web.php
@@ -135,7 +135,7 @@ Route::get('/services/digital-marketing-agency', [PageController::class, 'showDi
     // Other Static and Dynamic Routes
     Route::get('/products', [FrontendProductController::class, 'index'])->name('product.index');
     Route::get('/products/{slug}', [FrontendProductController::class, 'show'])->name('product.details');
-    
+
     Route::get('/contact', [ContactController::class, 'create'])->name('contact.create');
     Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 
@@ -144,7 +144,7 @@ Route::get('/services/digital-marketing-agency', [PageController::class, 'showDi
     })->name('contract_us');
 
     Route::get('/gallery', [MediaController::class, 'index_frontend'])->name('gallery');
-    
+
     // Job and Career Routes
     Route::get('/career', [JobController::class, 'index'])->name('career');
     Route::get('/jobs/{slug}', [JobController::class, 'show'])->name('jobs.show');
@@ -155,7 +155,7 @@ Route::get('/services/digital-marketing-agency', [PageController::class, 'showDi
         return view('frontend.apply', compact('job', 'settings'));
     })->name('apply');
     Route::post('/apply', [JobApplicationController::class, 'submitApplication'])->name('apply.submit');
-    
+
     // Blog Routes
     Route::get('/blog', [PageController::class, 'blog'])->name('blog');
     Route::get('/blogs/{blog:slug}', [PageController::class, 'showBlog'])->name('blogs.show');
@@ -204,7 +204,7 @@ Route::prefix('backend')->name('backend.')->middleware('auth.admin')->group(func
         return view('backend.settings');
     })->name('settings');
 
-    Route::resource('sliders', SliderController::class); 
+    Route::resource('sliders', SliderController::class);
     Route::get('/blog/{slug}', [PageController::class, 'showBlog'])->name('frontend.blog.show');
 
 
@@ -230,10 +230,10 @@ Route::prefix('backend')->name('backend.')->middleware('auth.admin')->group(func
     Route::get('/apply', [JobApplicationController::class, 'index'])->name('apply');
     // Route::get('/backend/contacts', [ContactController::class, 'index'])->name('backend.contacts');
     Route::get('/career', [CareerContentController::class, 'index'])->name('career');  // For GET requests
-    Route::post('/career', [CareerContentController::class, 'store'])->name('career.store'); 
+    Route::post('/career', [CareerContentController::class, 'store'])->name('career.store');
 
     // Admin Routes for Job Management
-  
+
 
   // About Routes
   Route::get('/about', [AboutContentController::class, 'index'])->name('about.index'); // Show About page
@@ -287,18 +287,18 @@ Route::get('/applicants/{id}/download', [JobApplicationController::class, 'downl
         Route::post('/store-gallery-image', [MediaController::class, 'storeGalleryImage'])->name('storeGalleryImage');
         Route::put('/update-gallery-image/{id}', [MediaController::class, 'updateGalleryImage'])->name('updateGalleryImage');
         Route::delete('/delete-gallery-image/{id}', [MediaController::class, 'deleteGalleryImage'])->name('deleteGalleryImage');
-        
+
         // Add the missing route for managing categories
         Route::post('/store-category', [MediaController::class, 'storeCategory'])->name('storeCategory');
         Route::put('/update-category/{id}', [MediaController::class, 'updateCategory'])->name('updateCategory');
         Route::delete('/delete-category/{id}', [MediaController::class, 'deleteCategory'])->name('deleteCategory');
-    
+
         // Videos management routes
         Route::get('/video', [MediaController::class, 'indexVideos'])->name('videos.index');
         Route::post('/store-video', [MediaController::class, 'storeVideo'])->name('storeVideo');
         Route::put('/update-video/{id}', [MediaController::class, 'updateVideo'])->name('updateVideo');
         Route::delete('/delete-video/{id}', [MediaController::class, 'deleteVideo'])->name('deleteVideo');
-    
+
         // Media links management routes
         Route::get('/link', [MediaController::class, 'indexMediaLinks'])->name('links.index');
         Route::post('/store-media-link', [MediaController::class, 'storeMediaLink'])->name('storeMediaLink');
@@ -312,11 +312,11 @@ Route::get('/applicants/{id}/download', [JobApplicationController::class, 'downl
     Route::put('/services/{id}', [ServiceController::class, 'update'])->name('services.update');
     Route::delete('/services/{id}', [ServiceController::class, 'destroy'])->name('services.destroy');
 
-    
+
     Route::get('/settings', [SettingsController::class, 'index'])->name('settings');
     Route::post('/settings', [SettingsController::class, 'update'])->name('settings.update');
 
-    
+
   // Partner routes
     Route::get('home/partner', [PartnerController::class, 'create'])->name('home.partner');
     Route::post('partners', [PartnerController::class, 'store'])->name('partners.store');
@@ -327,9 +327,9 @@ Route::get('/applicants/{id}/download', [JobApplicationController::class, 'downl
     Route::get('reviews/{review}/edit', [ReviewController::class, 'edit'])->name('reviews.edit');
     Route::put('reviews/{review}', [ReviewController::class, 'update'])->name('reviews.update');
     Route::delete('reviews/{review}', [ReviewController::class, 'destroy'])->name('reviews.destroy');
-    
 
-   
+
+
     Route::get('/home/languages', [TechnologyController::class, 'index'])->name('home.languages'); // Correct route definition
     Route::post('/languages/store', [TechnologyController::class, 'store'])->name('languages.store');
     Route::put('/languages/{technology}', [TechnologyController::class, 'update'])->name('languages.update');
@@ -340,8 +340,9 @@ Route::get('/applicants/{id}/download', [JobApplicationController::class, 'downl
 
     // Resource Routes for Modules
     Route::resource('modules', ModuleController::class)->except(['show']);
+    Route::resource('new_products', NewProductController::class)->except(['show']); // Exclude show if not needed
 
-    Route::get('new_products', [PageController::class, 'manageNewProducts'])->name('new_products.index');
+    // Route::get('new_products', [PageController::class, 'manageNewProducts'])->name('new_products.index');
 
 // Routes for NewProduct Management
 Route::resource('backend/new_products', NewProductController::class);
@@ -369,7 +370,7 @@ Route::delete('/new_products/modules/{module}', [NewProductModuleController::cla
 
     // POST request for handling form submissions or AJAX requests
     Route::post('/blog', [BlogController::class, 'store'])->name('blog.store');
-    
+
    // Blog Routes
    Route::get('/blog', [BlogController::class, 'index'])->name('blogs.index'); // List all blogs
    Route::get('/blogs/create', [BlogController::class, 'create'])->name('blogs.create'); // Show form to create a new blog
@@ -384,12 +385,12 @@ Route::delete('/new_products/modules/{module}', [NewProductModuleController::cla
     Route::delete('/categories/{id}/destroy', [BlogController::class, 'destroyCategory'])->name('categories.destroy');
 
     // Category Routes
-    Route::post('/categories/store', [BlogController::class, 'storeCategory'])->name('categories.store'); 
+    Route::post('/categories/store', [BlogController::class, 'storeCategory'])->name('categories.store');
 
     Route::post('/tags/store', [BlogController::class, 'storeTag'])->name('tags.store');
     Route::delete('/tags/{id}', [BlogController::class, 'destroyTag'])->name('tags.destroy');
 
-    
+
 // Routes for Main Settings
 Route::get('/main_settings', [MainSettingsController::class, 'index'])->name('main_settings.index');
 Route::post('/main_settings', [MainSettingsController::class, 'update'])->name('main_settings.update');

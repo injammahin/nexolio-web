@@ -350,11 +350,11 @@ public function getFilteredVisitors(Request $request)
 // tag related blog for services
 public function showAdaptiveSoftwareDevelopment()
 {
-    $relatedBlogs = Blog::whereHas('tags', function ($query) {
-        $query->whereIn('name', ['Adaptive Software', 'Software Development','software development']);
-    })->latest()->take(3)->get();
+    // $relatedBlogs = Blog::whereHas('tags', function ($query) {
+    //     $query->whereIn('name', ['Adaptive Software', 'Software Development','software development']);
+    // })->latest()->take(3)->get();
 
-    return view('frontend.services.adaptive-software-development', compact('relatedBlogs'));
+    return view('frontend.services.adaptive-software-development');
 }
 
 public function showITConsultingBlogs()

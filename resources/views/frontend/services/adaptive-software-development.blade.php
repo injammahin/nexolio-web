@@ -793,7 +793,7 @@
                     </div>
                 </div>
             </div>
-            <div class="bg-white ambala-section " data-aos="fade-down" data-aos-duration="1000">
+            {{-- <div class="bg-white ambala-section " data-aos="fade-down" data-aos-duration="1000">
                 <div class="container">
                     <div class=" text-center mb-5">
                         <h3 class="ambala_heading mb-4">Latest Article's</h3>
@@ -836,7 +836,7 @@
                         @endforeach
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </section>
 

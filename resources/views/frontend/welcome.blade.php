@@ -13,14 +13,14 @@
 <div class="main-wrapper bg-white ">
 
         <div class="video-container hero-section">
-          <video autoplay muted loop class="fullscreen-video">
+        <video autoplay muted loop class="fullscreen-video">
             <source src="{{ asset('/img/patials/12920671-hd_1920_1080_30fps.mp4') }}" type="video/mp4">
             Your browser does not support the video tag.
-          </video>
+        </video>
 
-         <!-- Text Overlay with Typing Animation -->
-         <div class="text-overlay">
-            <h1 class="heading">Custom Software Development Company</h1>
+        <!-- Text Overlay with Typing Animation -->
+        <div class="text-overlay">
+            <h1 class="sub-heading">Custom Software Development Company</h1>
             <p class="sub-heading">For Your Next Project</p>
             <p class="description">
                 Building on its 15+ years of experience, Ambala IT assists companies across verticals in building superior software with edgy functionality and accelerated time to market. As a client-first software development company, we solve your unique business challenges with a wide tech stack and flexible approaches.
@@ -31,212 +31,76 @@
             </div>
         </div>
 </div>
-
-
 <!-- Parallax Wave Before About Section -->
-
 <div class="container-fluid content-wrapper bg-white">
-
-    <div class="about top ambala-section " data-aos="fade-up" data-aos-duration="1000">
-
-
-                    <div class="row align-items-center">
-                        <div class="col-lg-6 col-md-12">
-                            <div class="">
-                                <div class=" wow fadeInUp" data-wow-delay=".1s">
-                                    {{-- <span class="custom_heading">About Ambala IT</span> --}}
-                                </div>
-                                <h3 class="ambala_heading ">We are the next generation of the business world.</h3>
-                                <div class="ambala_paragraph ">
-                                    <p class="ambala_paragraph mb-4">
-                                        {!! $aboutContent->about_text !!}
-
-                                </div>
-                            </div>
+<div>
+    <section class="about-section">
+        <div class="container">
+            <div class="row align-items-center p-5">
+                <!-- Content Column -->
+                <div class="content-column col-md-6 col-sm-12">
+                    <div class="inner-column fade-in-left">
+                        <div class="sec-title">
+                            <div class="title">About Us</div>
+                            <h2 class="heading">We Are The Leader In <br> The Interiors</h2>
                         </div>
-                        <div class="col-lg-6 col-md-12">
-                            <div class="experience-image-wrapper position-relative">
-                                <img src="{{ asset('img/home/ambalait-about-us-image-video.webp') }}"
-                                    alt=" home about image">
+                        <p>{!! $aboutContent->about_text !!}</p>
+                    </div>
+                </div>
 
-
-                            </div>
+                <!-- Image Column -->
+                <div class="image-column col-md-6 col-sm-12">
+                    <div class="inner-column parallax-image">
+                        <div class="image">
+                            <img src="{{ asset('/img/about/about.webp') }}" alt="About Us Image" class="about-img">
                         </div>
                     </div>
-
-    </div>
-            <!-- service-->
-    <script>
-                document.addEventListener('DOMContentLoaded', function() {
-                    let serviceBoxes = document.querySelectorAll('.service-box');
-
-                    function checkVisibility() {
-                        let windowHeight = window.innerHeight;
-                        serviceBoxes.forEach(function(box, index) {
-                            let boxTop = box.getBoundingClientRect().top;
-                            if (boxTop < windowHeight - 50) {
-                                setTimeout(() => {
-                                    box.classList.add('appear');
-                                }, index * 100); // Stagger the appearance of each box
-                            }
-                        });
-                    }
-
-                    window.addEventListener('scroll', checkVisibility);
-                    checkVisibility(); // Check on load
-                });
-    </script>
-    <section class="min-h-screen bg-gray-900 text-center py-20 px-8 xl:px-0 flex flex-col justify-center">
-        <span class="text-gray-400 text-lg max-w-lg mx-auto mb-2 capitalize flex items-center">
-          what we're offering
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-indigo-600 ml-3 w-6 h-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
-          </svg>
-        </span>
-        <h1 class="text-white text-4xl md:text-5xl xl:text-6xl font-semibold max-w-3xl mx-auto mb-16 leading-snug">
-          Services Built Specifically for your Business
-        </h1>
-
-        <div class="grid-offer text-left grid sm:grid-cols-2 md:grid-cols-2 gap-5 max-w-5xl mx-auto">
-          <!-- Card 1 -->
-          <div class="card bg-gray-800 p-10 relative">
-            <div class="circle"></div>
-            <div class="relative lg:pr-52 z-10">
-              <h2 class="capitalize text-white mb-4 text-2xl xl:text-3xl">uI/uX <br /> creative design</h2>
-              <p class="text-gray-400">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames.</p>
+                </div>
             </div>
-          </div>
-
-          <!-- Card 2 -->
-          <div class="card bg-gray-800 p-10 relative">
-            <div class="circle"></div>
-            <div class="relative lg:pl-48 z-10">
-              <h2 class="capitalize text-white mb-4 text-2xl xl:text-3xl">visual <br /> graphic design</h2>
-              <p class="text-gray-400">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames.</p>
-            </div>
-          </div>
-
-          <!-- Card 3 -->
-          <div class="card bg-gray-800 p-10 relative">
-            <div class="circle"></div>
-            <div class="relative lg:pr-44 z-10">
-              <h2 class="capitalize text-white mb-4 text-2xl xl:text-3xl">strategy & <br />digital marketing</h2>
-              <p class="text-gray-400">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames.</p>
-            </div>
-          </div>
-
-          <!-- Card 4 -->
-          <div class="card bg-gray-800 p-10 relative">
-            <div class="circle"></div>
-            <div class="relative lg:pl-48 z-10">
-              <h2 class="capitalize text-white mb-4 text-2xl xl:text-3xl">effective<br /> business growth</h2>
-              <p class="text-gray-400">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames.</p>
-            </div>
-          </div>
         </div>
-      </section>
+    </section>
 
-      <style>
-      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&display=swap');
+ <script>
+ document.addEventListener('DOMContentLoaded', function () {
+    const observerOptions = {
+        threshold: 0.3 // Trigger the animations when 30% of the element is visible
+    };
 
-      h2 {
-        font-family: 'Playfair Display', serif;
-        font-optical-sizing: auto;
-        font-weight: 400;
-        font-style: normal;
-      }
+    const fadeInObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            } else {
+                entry.target.classList.remove('visible');
+            }
+        });
+    }, observerOptions);
 
-      .card {
-        position: relative;
-        overflow: hidden;
-        transition: box-shadow 0.3s ease;
-      }
+    const contentColumn = document.querySelector('.fade-in-left');
+    const imageColumn = document.querySelector('.parallax-image');
 
-      .card:hover {
-        box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.3);
-      }
+    if (contentColumn) {
+        fadeInObserver.observe(contentColumn);
+    }
 
-      .card::before {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background-color: #4f46e5;
-        transition: clip-path 0.6s ease;
-      }
+    if (imageColumn) {
+        fadeInObserver.observe(imageColumn);
+    }
 
-      .card:nth-child(1)::before {
-        bottom: 0;
-        right: 0;
-        clip-path: circle(calc(6.25rem + 7.5vw) at 100% 100%);
-      }
+    // Parallax effect for the image
+    window.addEventListener('scroll', function () {
+        const scrollY = window.scrollY || window.pageYOffset;
+        const image = document.querySelector('.parallax-image img');
 
-      .card:nth-child(2)::before {
-        bottom: 0;
-        left: 0;
-        clip-path: circle(calc(6.25rem + 7.5vw) at 0% 100%);
-      }
-
-      .card:nth-child(3)::before {
-        top: 0;
-        right: 0;
-        clip-path: circle(calc(6.25rem + 7.5vw) at 100% 0%);
-      }
-
-      .card:nth-child(4)::before {
-        top: 0;
-        left: 0;
-        clip-path: circle(calc(6.25rem + 7.5vw) at 0% 0%);
-      }
-
-      .card:hover::before {
-        clip-path: circle(110vw at 50% 50%);
-      }
-
-      .circle {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background-size: cover;
-        z-index: 0;
-        transition: clip-path 0.6s ease;
-      }
-
-      .card:nth-child(1) .circle {
-        background: url("https://images.unsplash.com/photo-1587440871875-191322ee64b0?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") no-repeat 50% 50% / cover;
-        bottom: 0;
-        right: 0;
-        clip-path: circle(calc(6.25rem + 7.5vw) at 100% 100%);
-      }
-
-      .card:nth-child(2) .circle {
-        background: url("https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") no-repeat 50% 50% / cover;
-        bottom: 0;
-        left: 0;
-        clip-path: circle(calc(6.25rem + 7.5vw) at 0% 100%);
-      }
-
-      .card:nth-child(3) .circle {
-        background: url("https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") no-repeat 50% 50% / cover;
-        top: 0;
-        right: 0;
-        clip-path: circle(calc(6.25rem + 7.5vw) at 100% 0%);
-      }
-
-      .card:nth-child(4) .circle {
-        background: url("https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") no-repeat 50% 50% / cover;
-        top: 0;
-        left: 0;
-        clip-path: circle(calc(6.25rem + 7.5vw) at 0% 0%);
-      }
-
-      .card:hover p {
-        color: #ffffff;
-      }
-      </style>
-
-{{-- service --}}
-    <div class="main-section ambala-section" data-aos="fade-right" data-aos-duration="1000">
+        if (image) {
+            const parallaxFactor = 0.1; // Adjust this to make the effect stronger or weaker.
+            image.style.transform = `translateY(${scrollY * parallaxFactor}px)`;
+        }
+    });
+ });
+ </script>
+</div>
+    {{-- <div class="main-section ambala-section" data-aos="fade-right" data-aos-duration="1000">
                 <div id="services-section">
                     <script>
                         document.addEventListener('DOMContentLoaded', function() {
@@ -381,9 +245,434 @@
 
                     </div>
                 </div>
-    </div>
+    </div> --}}
+<div class="main-section ambala-section pt-3" data-aos="fade-left" data-aos-duration="1000">
+      <section class="grid-container">
+        <div class="grid-area left">
+          <div class="text-content">
+            <h1>Service 1</h1>
+            <ul>
+              <li><i class="fas fa-check"></i>Key Feature</li>
+              <li><i class="fas fa-check"></i>Key Feature</li>
+              <li><i class="fas fa-check"></i>Key Feature</li>
+            </ul>
+            <i class="fas fa-user-md"></i>
+          </div>
 
-            <!-- partner-->
+          <div class="text-content">
+            <h1>Service 2</h1>
+            <ul>
+              <li><i class="fas fa-check"></i>Key Feature</li>
+              <li><i class="fas fa-check"></i>Key Feature</li>
+              <li><i class="fas fa-check"></i>Key Feature</li>
+            </ul>
+            <i class="fas fa-procedures"></i>
+          </div>
+
+          <div class="text-content">
+            <h1>Service 3</h1>
+            <ul>
+              <li><i class="fas fa-check"></i>Key Feature</li>
+              <li><i class="fas fa-check"></i>Key Feature</li>
+              <li><i class="fas fa-check"></i>Key Feature</li>
+            </ul>
+            <i class="fas fa-tooth"></i>
+          </div>
+
+          <div class="text-content">
+            <h1>Service 4</h1>
+            <ul>
+              <li><i class="fas fa-check"></i>Key Feature</li>
+              <li><i class="fas fa-check"></i>Key Feature</li>
+              <li><i class="fas fa-check"></i>Key Feature</li>
+            </ul>
+            <i class="fas fa-teeth"></i>
+          </div>
+        </div>
+
+        <div class="grid-area middle">
+          <img src="https://images.pexels.com/photos/3881791/pexels-photo-3881791.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="4">
+          <img src="https://images.pexels.com/photos/3952377/pexels-photo-3952377.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="3">
+          <img src="https://images.pexels.com/photos/3881440/pexels-photo-3881440.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="2">
+          <img src="https://images.pexels.com/photos/3881221/pexels-photo-3881221.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="1">
+          <!-- Bottom 4 imgs only show on Vertical Small Screens. I just used the same imgs from container.right-bottom -->
+          <img src="https://images.pexels.com/photos/3946834/pexels-photo-3946834.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="4">
+          <img src="https://images.pexels.com/photos/3881451/pexels-photo-3881451.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="3">
+          <img src="https://images.pexels.com/photos/3881325/pexels-photo-3881325.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="2">
+          <img src="https://images.pexels.com/photos/3945602/pexels-photo-3945602.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="1">
+        </div>
+
+        <div class="grid-area right-top">
+          <img src="https://images.pexels.com/photos/3881161/pexels-photo-3881161.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="1">
+          <img src="https://images.pexels.com/photos/3881449/pexels-photo-3881449.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="2">
+          <img src="https://images.pexels.com/photos/3884093/pexels-photo-3884093.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="3">
+          <img src="https://images.pexels.com/photos/3884090/pexels-photo-3884090.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="4">
+        </div>
+
+        <div class="grid-area right-bottom">
+          <img src="https://images.pexels.com/photos/3946834/pexels-photo-3946834.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="4">
+          <img src="https://images.pexels.com/photos/3881451/pexels-photo-3881451.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="3">
+          <img src="https://images.pexels.com/photos/3881325/pexels-photo-3881325.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="2">
+          <img src="https://images.pexels.com/photos/3945602/pexels-photo-3945602.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="1">
+        </div>
+
+        <div class="buttons">
+          <button class="prev">
+            <i class="fa-solid fa-circle-chevron-up"></i>
+          </button>
+          <button class="next">
+            <i class="fa-solid fa-circle-chevron-down"></i>
+          </button>
+        </div>
+      </section>
+  <style>
+
+    .grid-container {
+        height: 400px !important;
+     border-radius: 20px;
+
+
+      --col-1-width: 50%;
+      display: grid;
+      grid-template-columns: var(--col-1-width) calc(50% - var(--col-1-width)) 50%;
+      grid-template-rows: 50% 50%;
+
+      overflow: hidden;
+      position: relative;
+    }
+
+    .grid-area.left{
+      grid-column: 1/2;
+      grid-row: 1/3;
+
+      position: relative;
+      z-index: 2;
+    }
+
+    .text-content{
+      height: 100%;
+      position: relative;
+      text-align: center;
+    }
+
+    .text-content h1{
+      font-size: 1.5rem;
+      font-family: "Playfair Display", serif;
+      color: white !important;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      background-color: rgba(0, 0, 0, 0.25);
+      width: 100%;
+      height: 50%;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .text-content > i{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+
+      color: #fff;
+      font-size: 30px;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 6px solid rgba(0, 0, 0, 0.25);
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .text-content ul{
+      list-style: none;
+      width: 100%;
+      height: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .text-content li{
+      font-size: 25px;
+      font-weight: bold;
+      line-height: 2;
+      color: rgb(255, 255, 255);
+    }
+
+    .text-content li i{
+      font-size: 15px;
+      background-color: rgba(0, 0, 0, 0.25);
+      padding: 5px;
+      border-radius: 5px;
+      margin-right: 10px;
+      box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+    }
+
+    .text-content:nth-child(1),
+    .text-content:nth-child(1) > i{
+      background-color: #FD3555;
+    }
+
+    .text-content:nth-child(2),
+    .text-content:nth-child(2) > i{
+      background-color: #2A86BA;
+    }
+
+    .text-content:nth-child(3),
+    .text-content:nth-child(3) > i{
+      background-color: rgb(255, 145, 0);
+    }
+
+    .text-content:nth-child(4),
+    .text-content:nth-child(4) > i{
+      background-color: rgb(0, 190, 41);
+    }
+
+    .grid-area.middle{
+      grid-column: 2/3;
+      grid-row: 1/3;
+
+      position: absolute;
+      /* top: -300%;  */
+      /* same as bottom: 300%; */
+      /* position done in JS */
+
+      width: 100%;
+      height: 100%;
+
+      display: flex;
+      flex-direction: column;
+
+      z-index: 1;
+    }
+
+    .grid-area.right-top{
+      grid-column: 3/4;
+      grid-row: 1/2;
+
+      position: absolute;
+
+      width: 100%;
+      height: 100%;
+
+      display: flex;
+    }
+
+    .grid-area.right-bottom{
+      grid-column: 3/4;
+      grid-row: 2/3;
+
+      position: absolute;
+      /* left: -300%;  */
+      /* same as right: 300%; */
+      /* position done in JS */
+
+      width: 100%;
+      height: 100%;
+
+      display: flex;
+    }
+
+    .grid-area{
+      transition: transform 500ms ease-out;
+    }
+
+    .grid-area img{
+      flex: 0 0 100%;
+      object-fit: cover;
+      object-position: center center;
+
+      filter: blur(1px) grayscale(30%);
+      transform: scale(100.5%);
+
+      transition: all 500ms;
+    }
+
+    .grid-area img:hover{
+      filter: blur(0px) grayscale(0%);
+      transform: scale(100%);
+    }
+
+    .buttons{
+      position: absolute;
+      top: 50%;
+      left: calc(var(--col-1-width) / 2);
+      width: calc(var(--col-1-width) * 0.9);
+      transform: translate(-50%, -50%);
+
+      display: flex;
+      justify-content: space-between;
+
+      z-index: 3;
+    }
+
+    .buttons button{
+      font-size: 2.5rem;
+      border: none;
+      background-color: transparent;
+      color: rgba(255, 255, 255, 0.9);
+
+      cursor: pointer;
+      transition: all 250ms;
+    }
+
+    .buttons button:hover{
+      color: rgb(255, 255, 255, 0.95);
+      filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
+      transform: scale(105%);
+    }
+
+    .buttons button:active{
+      color: rgb(255, 255, 255, 0.9);
+      filter: none;
+      transform: scale(100%);
+    }
+
+
+    @media (max-width: 1400px) {
+      .grid-container {
+        border-radius: 20px;
+
+        height: 350px !important;
+        --col-1-width: 45%;
+        display: grid;
+        grid-template-columns: var(--col-1-width) calc(100% - var(--col-1-width));
+        grid-template-rows: 50% 50%
+      }
+
+      .grid-area.left{
+        grid-column: 1/2;
+        grid-row: 1/3;
+      }
+
+      .text-content > i{
+        position: absolute;
+        top: 50%;
+        left: 100%;
+      }
+
+      .grid-area.middle{
+        display: none;
+      }
+
+      .grid-area.right-top{
+        grid-column: 2/3;
+        grid-row: 1/2;
+      }
+
+      .grid-area.right-bottom{
+        grid-column: 2/3;
+        grid-row: 2/3;
+      }
+
+      .buttons{
+        display: flex;
+        flex-direction: column;
+
+        left: var(--col-1-width);
+        transform: translate(-50%, -50%);
+
+        width: max-content;
+        height: 90%;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .grid-container {
+        border-radius: 20px;
+
+        --col-1-width: 50%;      }
+
+      .text-content h1{
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+      }
+
+      .text-content li{
+        font-size: 20px;
+      }
+
+      .text-content li i{
+        display: none;
+      }
+
+      .grid-area.middle{
+        display: flex;
+        grid-column: 2/3;
+        grid-row: 1/3;
+      }
+
+      .grid-area.right-top,
+      .grid-area.right-bottom{
+        display: none;
+      }
+
+      .grid-area img{
+        flex: 0 0 50%;
+      }
+    }
+  </style>
+  <script>const nextBtn = document.querySelector('button.next')
+        const prevBtn = document.querySelector('button.prev')
+        const grid_area_left = document.querySelector('.grid-area.left')
+        const grid_area_middle = document.querySelector('.grid-area.middle')
+        const grid_area_right_top = document.querySelector('.grid-area.right-top')
+        const grid_area_right_bottom = document.querySelector('.grid-area.right-bottom')
+        const number_of_slides = document.querySelectorAll('.grid-area.left > div.text-content').length
+
+        grid_area_middle.style.top = `-${(number_of_slides - 1) * 100}%`
+        grid_area_right_bottom.style.left = `-${(number_of_slides - 1) * 100}%`
+
+        let currentIdx = 0
+        let timeInterval = 4000
+        let slideInterval = setInterval(autoPlay, timeInterval)
+
+        nextBtn.addEventListener('click', ()=>{
+            currentIdx++
+            if(currentIdx > (number_of_slides - 1)){
+                currentIdx = 0
+            }
+
+            changeSlide(currentIdx)
+            clearInterval(slideInterval)
+            slideInterval = setInterval(autoPlay, timeInterval)
+        })
+
+        prevBtn.addEventListener('click', ()=>{
+            currentIdx--
+            if(currentIdx < 0){
+                currentIdx = (number_of_slides - 1)
+            }
+
+            changeSlide(currentIdx)
+            clearInterval(slideInterval)
+            slideInterval = setInterval(autoPlay, timeInterval)
+        })
+
+        function changeSlide(Idx){
+            grid_area_left.style.transform = `translateY(-${Idx * 100}%)`
+            grid_area_middle.style.transform = `translateY(${Idx * 100}%)`
+            grid_area_right_top.style.transform = `translateX(-${Idx * 100}%)`
+            grid_area_right_bottom.style.transform = `translateX(${Idx * 100}%)`
+        }
+
+        function autoPlay(){
+            currentIdx++
+            if(currentIdx > (number_of_slides - 1)){
+                currentIdx = 0
+            }
+
+            changeSlide(currentIdx)
+        }
+  </script>
+</div>
+ <!-- partner-->
     <div class="main-section ambala-section" data-aos="fade-left" data-aos-duration="1000">
                 <div>
                     <div class=" text-center mb-5">
