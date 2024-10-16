@@ -35,10 +35,10 @@
 
 <!-- Parallax Wave Before About Section -->
 
- <div class="container-fluid content-wrapper bg-white">
+<div class="container-fluid content-wrapper bg-white">
 
     <div class="about top ambala-section " data-aos="fade-up" data-aos-duration="1000">
-                <div>
+
 
                     <div class="row align-items-center">
                         <div class="col-lg-6 col-md-12">
@@ -63,10 +63,10 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
+
+    </div>
             <!-- service-->
-            <script>
+    <script>
                 document.addEventListener('DOMContentLoaded', function() {
                     let serviceBoxes = document.querySelectorAll('.service-box');
 
@@ -85,8 +85,158 @@
                     window.addEventListener('scroll', checkVisibility);
                     checkVisibility(); // Check on load
                 });
-            </script>
-            <div class="main-section ambala-section" data-aos="fade-right" data-aos-duration="1000">
+    </script>
+    <section class="min-h-screen bg-gray-900 text-center py-20 px-8 xl:px-0 flex flex-col justify-center">
+        <span class="text-gray-400 text-lg max-w-lg mx-auto mb-2 capitalize flex items-center">
+          what we're offering
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-indigo-600 ml-3 w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+          </svg>
+        </span>
+        <h1 class="text-white text-4xl md:text-5xl xl:text-6xl font-semibold max-w-3xl mx-auto mb-16 leading-snug">
+          Services Built Specifically for your Business
+        </h1>
+
+        <div class="grid-offer text-left grid sm:grid-cols-2 md:grid-cols-2 gap-5 max-w-5xl mx-auto">
+          <!-- Card 1 -->
+          <div class="card bg-gray-800 p-10 relative">
+            <div class="circle"></div>
+            <div class="relative lg:pr-52 z-10">
+              <h2 class="capitalize text-white mb-4 text-2xl xl:text-3xl">uI/uX <br /> creative design</h2>
+              <p class="text-gray-400">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames.</p>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="card bg-gray-800 p-10 relative">
+            <div class="circle"></div>
+            <div class="relative lg:pl-48 z-10">
+              <h2 class="capitalize text-white mb-4 text-2xl xl:text-3xl">visual <br /> graphic design</h2>
+              <p class="text-gray-400">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames.</p>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="card bg-gray-800 p-10 relative">
+            <div class="circle"></div>
+            <div class="relative lg:pr-44 z-10">
+              <h2 class="capitalize text-white mb-4 text-2xl xl:text-3xl">strategy & <br />digital marketing</h2>
+              <p class="text-gray-400">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames.</p>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="card bg-gray-800 p-10 relative">
+            <div class="circle"></div>
+            <div class="relative lg:pl-48 z-10">
+              <h2 class="capitalize text-white mb-4 text-2xl xl:text-3xl">effective<br /> business growth</h2>
+              <p class="text-gray-400">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <style>
+      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&display=swap');
+
+      h2 {
+        font-family: 'Playfair Display', serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      .card {
+        position: relative;
+        overflow: hidden;
+        transition: box-shadow 0.3s ease;
+      }
+
+      .card:hover {
+        box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.3);
+      }
+
+      .card::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #4f46e5;
+        transition: clip-path 0.6s ease;
+      }
+
+      .card:nth-child(1)::before {
+        bottom: 0;
+        right: 0;
+        clip-path: circle(calc(6.25rem + 7.5vw) at 100% 100%);
+      }
+
+      .card:nth-child(2)::before {
+        bottom: 0;
+        left: 0;
+        clip-path: circle(calc(6.25rem + 7.5vw) at 0% 100%);
+      }
+
+      .card:nth-child(3)::before {
+        top: 0;
+        right: 0;
+        clip-path: circle(calc(6.25rem + 7.5vw) at 100% 0%);
+      }
+
+      .card:nth-child(4)::before {
+        top: 0;
+        left: 0;
+        clip-path: circle(calc(6.25rem + 7.5vw) at 0% 0%);
+      }
+
+      .card:hover::before {
+        clip-path: circle(110vw at 50% 50%);
+      }
+
+      .circle {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        z-index: 0;
+        transition: clip-path 0.6s ease;
+      }
+
+      .card:nth-child(1) .circle {
+        background: url("https://images.unsplash.com/photo-1587440871875-191322ee64b0?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") no-repeat 50% 50% / cover;
+        bottom: 0;
+        right: 0;
+        clip-path: circle(calc(6.25rem + 7.5vw) at 100% 100%);
+      }
+
+      .card:nth-child(2) .circle {
+        background: url("https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") no-repeat 50% 50% / cover;
+        bottom: 0;
+        left: 0;
+        clip-path: circle(calc(6.25rem + 7.5vw) at 0% 100%);
+      }
+
+      .card:nth-child(3) .circle {
+        background: url("https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") no-repeat 50% 50% / cover;
+        top: 0;
+        right: 0;
+        clip-path: circle(calc(6.25rem + 7.5vw) at 100% 0%);
+      }
+
+      .card:nth-child(4) .circle {
+        background: url("https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") no-repeat 50% 50% / cover;
+        top: 0;
+        left: 0;
+        clip-path: circle(calc(6.25rem + 7.5vw) at 0% 0%);
+      }
+
+      .card:hover p {
+        color: #ffffff;
+      }
+      </style>
+
+{{-- service --}}
+    <div class="main-section ambala-section" data-aos="fade-right" data-aos-duration="1000">
                 <div id="services-section">
                     <script>
                         document.addEventListener('DOMContentLoaded', function() {
@@ -231,9 +381,10 @@
 
                     </div>
                 </div>
-            </div>
+    </div>
+
             <!-- partner-->
-            <div class="main-section ambala-section" data-aos="fade-left" data-aos-duration="1000">
+    <div class="main-section ambala-section" data-aos="fade-left" data-aos-duration="1000">
                 <div>
                     <div class=" text-center mb-5">
                         <h3 class="ambala_heading mb-4">Our Partners</h3>
@@ -255,9 +406,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
+    </div>
             <!-- revirew-->
-            <div class="about ambala-section" data-aos="fade-right" data-aos-duration="1000">
+    <div class="about ambala-section" data-aos="fade-right" data-aos-duration="1000">
                 <div class="main-section">
                     <div class="">
                         <div class=" text-center mb-5">
@@ -297,7 +448,7 @@
                     </div>
 
                 </div>
-            </div>
+    </div>
 
             @foreach ($reviews as $review)
                 @if ($review->video_url)
@@ -348,7 +499,7 @@
                 });
             </script>
 
-            <div class="industries-section bg-white pt-0 pb-0 text-center" data-aos="fade-up" data-aos-duration="1000">
+    <div class="industries-section bg-white pt-0 pb-0 text-center" data-aos="fade-up" data-aos-duration="1000">
                 <div>
                     <div class=" text-center mb-5">
                         <h3 class="ambala_heading mb-4">Industry we serve</h3>
@@ -433,9 +584,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
+    </div>
 
-            <div class=" award bg-white ambala-section text-center " data-aos="fade-right" data-aos-duration="1000">
+    <div class=" award bg-white ambala-section text-center " data-aos="fade-right" data-aos-duration="1000">
                 <div>
                     <div class=" text-center mb-5">
                         <h3 class="ambala_heading mb-4">Innovative Tools for Superior Solutions
@@ -461,9 +612,9 @@
                             </div>
                         </div>
                     @endforeach
-                </div>
+    </div>
 
-            </div>
+</div>
             <style>
                 .award.img {
                     position: relative;
