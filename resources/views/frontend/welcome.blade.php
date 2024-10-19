@@ -719,14 +719,14 @@
     transform: scale(1.3);
  }
 
- @keyframes slide {
+@keyframes slide {
     0% {
         transform: translateX(0);
     }
     100% {
         transform: translateX(-100%);
     }
- }
+}
 </style>
 <script>
     document.addEventListener('DOMContentLoaded', function() {

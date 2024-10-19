@@ -218,3 +218,16 @@
         transform: translateX(0);
     }
 }
+.quote {
+    font-family: emoji !important;
+}
+.industry-icon:hover {
+    transform: rotate(360deg) scale(1.5) !important;
+    transition: 0.3s;
+    color: #9d0208;
+}
+.industry-icon:active {
+    transform: rotate(360deg) scale(1.5) !important;
+    transition: 0.3s;
+    color: #9d0208;
+}
