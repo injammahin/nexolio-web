@@ -698,14 +698,14 @@
 
  .logo-slider:hover .logos-slide {
     animation-play-state: paused;
-}
+ }
 
-.logos-slide {
+ .logos-slide {
     display: inline-block;
     animation: slide 45s linear infinite;
-}
+ }
 
-.logos-slide img {
+ .logos-slide img {
     mix-blend-mode: multiply !important;
     transform: rotate(-90deg) ;
     width: 125px;
@@ -713,20 +713,20 @@
     margin: 0 20px;
     vertical-align: middle;
     transition: transform .6s;
-}
+ }
 
-.logos-slide img:hover {
+ .logos-slide img:hover {
     transform: scale(1.3);
-}
+ }
 
-@keyframes slide {
+ @keyframes slide {
     0% {
         transform: translateX(0);
     }
     100% {
         transform: translateX(-100%);
     }
-}
+ }
 </style>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
