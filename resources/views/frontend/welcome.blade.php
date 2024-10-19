@@ -673,29 +673,69 @@
   </script>
 </div>
  <!-- partner-->
-    <div class="main-section ambala-section" data-aos="fade-left" data-aos-duration="1000">
-                <div>
-                    <div class=" text-center mb-5">
-                        <h3 class="ambala_heading mb-4">Our Partners</h3>
-                        <p class="ambala_paragraph ">Our trusted partner in driving innovation with cutting-edge customized
-                            software solutions.
-
-                        </p>
-                    </div>
-                    <div class=" partners">
-                        <div class="row justify-content-center text-center">
-                            @foreach ($partners as $partner)
-                                <div class="col-lg-2 col-md-4 col-sm-4 col-6 mb-4">
-                                    <div class="client-card">
-                                        <img src="{{ asset('media/partners/' . $partner->image) }}"
-                                            style="height: auto;width:auto !important;" alt="{{ $partner->name }}">
-                                    </div>
-                                </div>
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
+ <div class="main-section ambala-section" data-aos="fade-left" data-aos-duration="1000">
+    <div class="text-center mb-5">
+        <h3 class="ambala_heading mb-4">Our Partners</h3>
+        <p class="ambala_paragraph">
+            Our trusted partners driving innovation with cutting-edge customized software solutions.
+        </p>
     </div>
+    <div class="logo-slider">
+        <div class="logos-slide">
+            @foreach ($partners as $partner)
+                <img src="{{ asset('media/partners/' . $partner->image) }}" alt="{{ $partner->name }}">
+            @endforeach
+        </div>
+    </div>
+</div>
+<style>
+ .logo-slider {
+    overflow: hidden;
+    padding: 30px 0;
+    white-space: nowrap;
+    position: relative;
+ }
+
+ .logo-slider:hover .logos-slide {
+    animation-play-state: paused;
+}
+
+.logos-slide {
+    display: inline-block;
+    animation: slide 45s linear infinite;
+}
+
+.logos-slide img {
+    mix-blend-mode: multiply !important;
+    transform: rotate(-90deg) ;
+    width: 125px;
+    height: 125px;
+    margin: 0 20px;
+    vertical-align: middle;
+    transition: transform .6s;
+}
+
+.logos-slide img:hover {
+    transform: scale(1.3);
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const logosSlide = document.querySelector('.logos-slide');
+        const clone = logosSlide.cloneNode(true);
+        document.querySelector('.logo-slider').appendChild(clone);
+    });
+</script>
+
             <!-- revirew-->
     <div class="about ambala-section" data-aos="fade-right" data-aos-duration="1000">
                 <div class="main-section">
