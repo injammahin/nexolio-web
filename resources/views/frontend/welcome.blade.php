@@ -719,14 +719,14 @@
     transform: scale(1.3);
  }
 
-@keyframes slide {
+ @keyframes slide {
     0% {
         transform: translateX(0);
     }
     100% {
         transform: translateX(-100%);
     }
-}
+ }
 </style>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -737,7 +737,7 @@
 </script>
 
             <!-- revirew-->
-    <div class="about ambala-section" data-aos="fade-right" data-aos-duration="1000">
+ <div class="about ambala-section" data-aos="fade-right" data-aos-duration="1000">
                 <div class="main-section">
                     <div class="">
                         <div class=" text-center mb-5">
@@ -944,101 +944,32 @@
     </div>
 
 </div>
-            <style>
-                .award.img {
-                    position: relative;
-                    overflow: hidden;
-                    justify-content: center;
-                    /* Centers the entire content horizontally */
-                    align-items: center;
-                    border-radius: 5px;
-                }
 
-                .image-70px {
-                    width: 100%;
-                    transition: transform 0.3s ease;
-                }
+<div class="container">
+    <h1 class="text-center">Gallery</h1>
+    <p class="text-center mb-4">Behind the Scenes: A Visual Journey of our Innovations, Achievements, and Success Stories.</p>
 
-                .img-shade {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    background-color: rgba(218, 159, 159, 0.11);
-                    /* Darker shade to cover the whole image */
-                    transition: opacity 0.3s ease;
-                    z-index: 1;
-                    /* Ensure the shade appears on top of the image */
-                    justify-content: center;
-                    /* Centers child items horizontally */
-                    align-items: center;
-                }
-
-                .row {
-                    display: flex;
-                    /* Enables flexbox */
-                    flex-wrap: wrap;
-                    /* Allows wrapping */
-                    justify-content: center;
-                    /* Centers child items horizontally */
-                    align-items: center;
-                    /* Centers child items vertically */
-                }
-
-                .col-6,
-                .col-md-2 {
-                    display: flex;
-                    /* Enables flexbox on each column */
-                    justify-content: center;
-                    /* Centers child items horizontally */
-                    align-items: center;
-                    /* Centers child items vertically */
-                }
-
-
-
-                .img-container:hover .image-70px {
-                    transform: scale(1.1);
-                    z-index: 0;
-                    /* Send the image behind the shade when hovering */
-                }
-
-                .img-container:hover .img-shade {
-                    opacity: 0;
-                }
-            </style>
-            <div class="bg-white ambala-section text-center" data-aos="fade-left" data-aos-duration="1000">
-                <div>
-
-                    <div class=" text-center mb-5">
-                        <h3 class="ambala_heading mb-4">Gallery</h3>
-                        <p class="ambala_paragraph ">Behind the Scenes: A Visual Journey of our Innovations,
-                            Achievement,
-                            and Success Stories.
-
-                        </p>
-                    </div>
-                    <div class="gallery-track">
-                        @foreach ($galleryImages as $image)
-                            <div class='card-gallery'>
-                                <div class='card-gallery-image-wrapper'>
-                                    <img src="{{ asset($image->image) }}" alt="{{ $image->title }}">
-                                    <div class="description">
-                                        <h2>{{ $image->title }}</h2>
-                                        <p>{{ $image->description }}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                    <div class="gallery-see_more pt-4 ">
-                        <a href="{{ route('frontend.gallery') }}" class="font-weight-600 butn very-small">See
-                            More</a>
-                    </div>
+    <div class="gallery-wrap">
+        <!-- Laravel Loop for Gallery Images -->
+        @foreach ($galleryImages as $image)
+            <div class="item" style="background-image: url('{{ asset($image->image) }}');">
+                <div class="overlay">
+                    <h2>{{ $image->title }}</h2>
+                    <p>{{ $image->description }}</p>
                 </div>
             </div>
-            <div class="bg-white ambala-section " data-aos="fade-down" data-aos-duration="1000">
+        @endforeach
+    </div>
+
+    <!-- See More Button -->
+    <div class="gallery-see_more text-center pt-4">
+        <a href="{{ route('frontend.gallery') }}" class="font-weight-600 butn very-small">See More</a>
+    </div>
+</div>
+
+
+
+<div class="bg-white ambala-section " data-aos="fade-down" data-aos-duration="1000">
                 <div class="container">
                     <div class=" text-center mb-5">
                         <h3 class="ambala_heading mb-4">Latest Article's</h3>
@@ -1083,12 +1014,12 @@
 
     </div>
 </div>
-<div class="parallax-wave">
+{{-- <div class="parallax-wave">
     <!-- SVG for waves animation -->
     <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-        <defs>
+        <div>
             <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-        </defs>
+        </div>
         <g class="wave-parallax">
             <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7)" />
             <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
@@ -1096,508 +1027,7 @@
             <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
         </g>
     </svg>
-</div>
+</div> --}}
     @endsection
-    <style>
-        .title,
-        .caption {
-            color: white;
-            /* Make sure the text is a visible color */
-            font-size: 2rem;
-            /* Adjust the size as needed */
-            text-align: center;
-            /* Center the text */
-            position: relative;
-            /* Ensure it stays inside the slider container */
-            z-index: 10;
-            /* Make sure the text is above other elements */
-        }
 
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            /* Add a dark overlay to improve text visibility */
-            z-index: 5;
-        }
 
-        .slide-content {
-            position: absolute;
-            bottom: 20%;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 10;
-            text-align: center;
-        }
-        .video-container {
-    position: relative;
-    width: 100%;
-    height: 100vh; /* Full viewport height */
-    overflow: hidden;
-}
-
-.fullscreen-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures the video covers the entire container */
-    z-index: 1; /* Ensure the video is behind any other content */
-}
-.hero-section {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        /* Full screen height */
-        z-index: 1;
-    }
-
-    /* Hero slider styling */
-    .carousel-cell {
-        width: 100%;
-        height: 100vh;
-        /* Make each slide full screen */
-        background-size: cover;
-        background-position: center;
-    }
-
-    .overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        /* Dark overlay for better text visibility */
-        z-index: 1;
-    }
-
-    .slide-content {
-        position: absolute;
-        bottom: 20%;
-        left: 50%;
-        transform: translateX(-50%);
-        text-align: center;
-        z-index: 2;
-        color: #fff;
-    }
-
-    .title,
-    .caption {
-        color: white;
-        text-align: center;
-        font-size: 2rem;
-        z-index: 10;
-    }
-
-    /* Content below the hero section */
-    .content-wrapper {
-        position: relative;
-        z-index: 2;
-        margin-top: 100vh;
-        /* Push the content down after the fixed hero */
-    }
-
-    /* About section styling */
-    .ambala-section {
-        padding: 100px 0;
-    }
-    .typing-animation {
-    font-size: 3rem;
-    font-weight: bold;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 0.15em solid orange; /* Cursor */
-    width: 0; /* Initially hidden */
-    animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
-}
-
-.sub-heading {
-    font-size: 1.5rem;
-    color: orange;
-    margin-top: 20px;
-    animation: fadeIn 2s ease-in-out;
-}
-
-.cta-buttons {
-    margin-top: 20px;
-}
-
-.cta-button {
-    padding: 10px 20px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    margin: 0 10px;
-}
-
-.view-portfolio-button {
-    background-color: #17a2b8;
-}
-
-/* Typing Effect */
-@keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
-}
-
-@keyframes blink-caret {
-    from, to { border-color: transparent; }
-    50% { border-color: orange; }
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-.text-overlay{
-    z-index:1;
-}
-
-</style>
-
-<style>.heading {
-    font-size: 3.5rem;
-    font-weight: 700;
-    line-height: 1.2;
-    color: white !important; /* Ensure heading text is white */
-}
-
-.sub-heading {
-    font-size: 2rem;
-    font-weight: 600;
-    color: white !important; /* Ensure sub-heading text is white */
-    margin: 20px 0;
-}
-
-.description {
-    font-size: 1rem;
-    font-weight: 400;
-    color: white !important; /* Ensure description text is white */
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-.cta-buttons {
-    margin-top: 20px;
-}
-
-.cta-button {
-    padding: 12px 24px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    margin-right: 10px;
-    display: inline-block;
-    font-size: 1rem;
-    font-weight: 500;
-    transition: background-color 0.3s ease;
-}
-
-.view-portfolio-button {
-    background-color: #17a2b8;
-}
-
-.cta-button:hover {
-    background-color: #155724;
-}
-
-.view-portfolio-button:hover {
-    background-color: #0f6674;
-}
-
-/* Content below the hero section */
-.content-wrapper {
-    position: relative;
-    z-index: 2;
-    margin-top: 100vh;
-    /* Push the content down after the fixed hero */
-}
-
-
-/* Responsive adjustments */
-@media (max-width: 1200px) {
-    .heading {
-        font-size: 3rem;
-    }
-
-    .sub-heading {
-        font-size: 1.8rem;
-    }
-
-    .description {
-        font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 992px) {
-    .heading {
-        font-size: 2.5rem;
-    }
-
-    .sub-heading {
-        font-size: 1.6rem;
-    }
-
-    .description {
-        font-size: 0.85rem;
-    }
-
-    .cta-button {
-        padding: 10px 20px;
-        font-size: 0.9rem;
-    }
-
-    .text-overlay {
-        left: 8%;
-    }
-}
-
-@media (max-width: 768px) {
-    .heading {
-        font-size: 2.2rem;
-    }
-
-    .sub-heading {
-        font-size: 1.4rem;
-    }
-
-    .description {
-        font-size: 0.8rem;
-    }
-
-    .cta-button {
-        padding: 8px 16px;
-        font-size: 0.85rem;
-    }
-
-    .text-overlay {
-        top: 35%;
-        left: 5%;
-        max-width: 500px;
-    }
-}
-
-@media (max-width: 576px) {
-    .heading {
-        font-size: 2rem;
-    }
-
-    .sub-heading {
-        font-size: 1.3rem;
-    }
-
-    .description {
-        font-size: 0.75rem;
-    }
-
-    .cta-button {
-        padding: 8px 14px;
-        font-size: 0.8rem;
-    }
-
-    .text-overlay {
-        top: 40%;
-        left: 5%;
-        max-width: 100%;
-    }
-}
-.text-overlay {
-    position: absolute;
-    top: 30%;
-    left: 10%;
-    text-align: left;
-    color: white !important; /* Set all text to white */
-    max-width: 600px;
-    z-index: 2;
-}
-</style>
-<style>.waves {
-    position: relative;
-    width: 100%;
-    height: 15vh;
-    margin-bottom: -7px;
-    min-height: 100px;
-    max-height: 150px;
-}
-
-.wave-parallax > use {
-    animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
-}
-
-.wave-parallax > use:nth-child(1) {
-    animation-delay: -2s;
-    animation-duration: 7s;
-}
-
-.wave-parallax > use:nth-child(2) {
-    animation-delay: -3s;
-    animation-duration: 10s;
-}
-
-.wave-parallax > use:nth-child(3) {
-    animation-delay: -4s;
-    animation-duration: 13s;
-}
-
-.wave-parallax > use:nth-child(4) {
-    animation-delay: -5s;
-    animation-duration: 20s;
-}
-
-@keyframes move-forever {
-    0% {
-        transform: translate3d(-90px, 0, 0);
-    }
-    100% {
-        transform: translate3d(85px, 0, 0);
-    }
-}
-
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}</style>
-<style>
-    /* Parallax Wave Section */
-    .parallax-wave {
-        position: relative;
-        top: 0;
-        width: 100%;
-        height: 150px; /* Adjust as necessary */
-        z-index: 2; /* Ensure it's above the background but below content */
-    }
-
-    .waves {
-        position: relative;
-        width: 100%;
-        height: 15vh;
-        margin-bottom: -7px;
-        min-height: 100px;
-        max-height: 150px;
-    }
-
-    .wave-parallax > use {
-        animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
-    }
-
-    .wave-parallax > use:nth-child(1) {
-        animation-delay: -2s;
-        animation-duration: 7s;
-    }
-
-    .wave-parallax > use:nth-child(2) {
-        animation-delay: -3s;
-        animation-duration: 10s;
-    }
-
-    .wave-parallax > use:nth-child(3) {
-        animation-delay: -4s;
-        animation-duration: 13s;
-    }
-
-    .wave-parallax > use:nth-child(4) {
-        animation-delay: -5s;
-        animation-duration: 20s;
-    }
-
-    /* Animation for wave movement */
-    @keyframes move-forever {
-        0% {
-            transform: translate3d(-90px, 0, 0);
-        }
-        100% {
-            transform: translate3d(85px, 0, 0);
-        }
-    }
-
-    /* Hero Section and Text Overlay */
-    .hero-section {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        z-index: 1;
-    }
-
-    .fullscreen-video {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: 1;
-    }
-
-    .text-overlay {
-        position: absolute;
-        top: 30%;
-        left: 10%;
-        text-align: left;
-        color: white;
-        max-width: 600px;
-        z-index: 2;
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-        .heading {
-            font-size: 2.2rem;
-        }
-        .sub-heading {
-            font-size: 1.4rem;
-        }
-        .description {
-            font-size: 0.8rem;
-        }
-        .cta-button {
-            padding: 8px 16px;
-            font-size: 0.85rem;
-        }
-        .text-overlay {
-            top: 35%;
-            left: 5%;
-            max-width: 500px;
-        }
-    }
-
-    @media (max-width: 576px) {
-        .heading {
-            font-size: 2rem;
-        }
-        .sub-heading {
-            font-size: 1.3rem;
-        }
-        .description {
-            font-size: 0.75rem;
-        }
-        .cta-button {
-            padding: 8px 14px;
-            font-size: 0.8rem;
-        }
-        .text-overlay {
-            top: 40%;
-            left: 5%;
-            max-width: 100%;
-        }
-    }
-    </style>

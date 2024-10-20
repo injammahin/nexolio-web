@@ -1,27 +1,26 @@
-.ambala-section{
+.ambala-section {
     padding-top: 0px;
     padding-bottom: 2.5rem !important;
 }
-.top{
+.top {
     padding-top: 2.5rem;
 }
 
-.vision-mission-img{
+.vision-mission-img {
     height: 450px !important;
     width: 600px !important;
 }
 
-
 /* mobile responsive */
 @media (max-width: 576px) {
-    .ambala-section{
+    .ambala-section {
         padding-top: 0px;
         padding-bottom: 1.5rem !important;
     }
-    .top{
+    .top {
         padding-top: 1.5rem;
     }
-    .vision-mission-img{
+    .vision-mission-img {
         height: 300px !important;
         width: 400px !important;
     }
@@ -30,10 +29,10 @@
         height: 230px !important;
         object-fit: cover;
     }
-    .career-top{
+    .career-top {
         padding-top: 1.5rem;
     }
-    .value-box-1{
+    .value-box-1 {
         padding-bottom: 1.5rem !important;
     }
     .logo-container {
@@ -52,7 +51,6 @@
         /* height: 450px !important; */
         overflow: hidden;
     }
-
 }
 /* tab responsive mood */
 @media (max-width: 768px) {

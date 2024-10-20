@@ -1,3 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
 <header id="header" class="{{ request()->routeIs('home') ? 'transparent-header' : 'solid-header fixed-header header' }}">
     <!-- Top Header (Initially Transparent) -->
     <div class="header-top">
@@ -23,6 +35,10 @@
                             src="https://www.capgemini.com/wp-content/themes/capgemini2020/assets/images/global-white.svg"
                             class="language-icon">
                     </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
+                </button>
                 </div>
             </nav>
         </div>
@@ -127,41 +143,89 @@
         </div>
     </div>
 </header>
-
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        let lastScrollTop = 0;
         const headerTop = document.querySelector('.header-top');
         const header = document.querySelector('#header');
         const navbar = document.querySelector('.navbar-default');
+        const navLinks = document.querySelectorAll('.header-link, .navbar-nav li a');
 
-        window.addEventListener('scroll', function () {
+        // Set initial transparency
+        headerTop.style.transform = 'translateY(0px)'; // Set transform to 0px on load
+
+        // Function to handle transparency on load and scroll
+        function handleHeaderTransparency() {
             const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
             if (currentScroll > 50) {
                 headerTop.style.transform = 'translateY(-100%)'; // Hide the top bar
                 header.classList.add('solid-header'); // Add solid header class
                 navbar.classList.add('solid'); // Make navbar solid on scroll
+                navLinks.forEach(link => link.style.color = 'black'); // Make links black
             } else {
-                headerTop.style.transform = 'translateY(0)'; // Show the top bar
+                headerTop.style.transform = 'translateY(0px)'; // Show the top bar
                 header.classList.remove('solid-header'); // Remove solid header class
                 navbar.classList.remove('solid'); // Remove solid background
+                navLinks.forEach(link => link.style.color = 'white'); // Make links white
             }
-            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-        });
+        }
+
+        // Initial call to set the transparency based on initial scroll position
+        handleHeaderTransparency();
+
+        // Adjust transparency on scroll
+        window.addEventListener('scroll', handleHeaderTransparency);
 
         // Add hover effect to make background white and text/logo black
         header.addEventListener('mouseenter', function () {
             if (!header.classList.contains('solid-header')) {
                 header.classList.add('hovered-header');
+                navLinks.forEach(link => link.style.color = 'black'); // Change link color to black
             }
         });
 
         header.addEventListener('mouseleave', function () {
             header.classList.remove('hovered-header');
+            if (!header.classList.contains('solid-header')) {
+                navLinks.forEach(link => link.style.color = 'white'); // Revert link color to white
+            }
         });
     });
 </script>
+{{-- <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const headerTop = document.querySelector('.custom-header-top');
+        const header = document.querySelector('#custom-header');
+        const navbar = document.querySelector('.custom-navbar');
+        const navLinks = document.querySelectorAll('.custom-header-link, .navbar-nav li a');
+
+        function handleHeaderTransparency() {
+            const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (currentScroll > 50) {
+                headerTop.style.transform = 'translateY(-100%)'; // Hide the top bar
+                header.classList.add('custom-solid-header'); // Add solid header class
+                navbar.classList.add('custom-solid'); // Make navbar solid on scroll
+                navLinks.forEach(link => link.style.color = 'black'); // Make links black
+            } else {
+                headerTop.style.transform = 'translateY(0px)'; // Show the top bar
+                header.classList.remove('custom-solid-header'); // Remove solid header class
+                navbar.classList.remove('custom-solid'); // Remove solid background
+                navLinks.forEach(link => link.style.color = 'white'); // Make links white
+            }
+        }
+
+        // Initial call to set the transparency based on initial scroll position
+        handleHeaderTransparency();
+
+        // Adjust transparency on scroll
+        window.addEventListener('scroll', handleHeaderTransparency);
+    });
+</script> --}}
+
 
 <style>
     /* Basic header styles */
@@ -239,5 +303,76 @@
 
     .solid-header .navbar-brand img {
         filter: none; /* Black logo when scrolled */
+    }
+    .navbar-toggler {
+    top: 70px;
+    right: 10px;
+    }
+    @media (max-width: 576px) {
+        .header-top {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 11px 0;
+            background-color: white;
+            color: black;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+
+        .header-nav ul {
+            display: flex;
+            gap: 15px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header-link {
+            text-decoration: none;
+            color: black;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-default {
+            position: fixed;
+            top: 60px;
+            width: 100%;
+            padding: 15px 0;
+            background-color: white;
+            transition: background-color 0.5s ease, color 0.5s ease;
+            z-index: 999;
+        }
+
+        .navbar-brand img {
+            height: 4.5rem;
+            filter: brightness(0);
+            transition: filter 0.3s ease, height 0.3s ease;
+        }
+
+        /* Media Query for Mobile & Tablet */
+        @media (max-width: 991.98px) {
+            .header-top {
+                background-color: white;
+                color: black;
+                position: fixed;
+                top: 0;
+                z-index: 1000;
+            }
+
+            .header-link {
+                color: black;
+            }
+
+            .navbar-default {
+                background-color: white;
+            }
+        }
+
+        .navbar-toggler {
+            margin-right: 10px;
+        }
+    </style>
     }
 </style>
