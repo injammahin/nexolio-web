@@ -31,7 +31,7 @@ class AboutContentController extends Controller
     {
         $request->validate([
             'about_text' => 'nullable|string',
-            // 'about_image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
+            'about_image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
         ]);
 
         $aboutContent = AboutContent::firstOrNew(); // Use firstOrNew to create a new instance if it doesn't exist
