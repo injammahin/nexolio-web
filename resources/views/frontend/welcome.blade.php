@@ -10,15 +10,13 @@
 <div class=" main-wrapper ">
 
 
-<div class="main-wrapper bg-white ">
+<div class="">
+    <!-- Parallax Layers -->
+    <div class="section-parallax main-hero parallax-00" style="background-image: url('http://www.ivang-design.com/svg-load/parallax/parallax-0.png');"></div>
+    <div class="section-parallax parallax-01" style="background-image: url('http://www.ivang-design.com/svg-load/parallax/parallax-01.png');"></div>
 
-        <div class="video-container hero-section">
-        <video autoplay muted loop class="fullscreen-video">
-            <source src="{{ asset('/img/patials/12920671-hd_1920_1080_30fps.mp4') }}" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-
-        <!-- Text Overlay with Typing Animation -->
+    <!-- Hero Section -->
+    <div>
         <div class="text-overlay">
             <h1 class="sub-heading">Custom Software Development Company</h1>
             <p class="sub-heading">For Your Next Project</p>
@@ -30,6 +28,99 @@
                 <a href="#portfolio" class="cta-button view-portfolio-button">View Portfolio</a>
             </div>
         </div>
+    </div>
+
+
+    <style>
+.main-hero{
+    background: #000 !important;
+
+}
+        .section {
+          position: relative;
+          display: block;
+        }
+
+        .full-height {
+            background: #000 !important;
+          height: 100vh;
+        }
+
+        .section-title-wrap {
+          position: absolute;
+          top: 50%;
+          left: 0;
+          width: 100%;
+          transform: translateY(-50%);
+          z-index: 3;
+          text-align: center;
+        }
+
+        .section-parallax {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-size: cover;
+          z-index: 2;
+        }
+
+        .parallax-fade-top {
+          transition: opacity 0.5s, top 0.5s;
+        }
+
+        .case-study-wrapper {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          list-style: none;
+        }
+
+        .case-study-images li {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          transition: opacity 0.3s, transform 0.3s;
+        }
+
+        .case-study-images li.show {
+          opacity: 1;
+        }
+        </style>
+     <script>
+         (function($) {
+            "use strict";
+
+            // Parallax Scrolling Effect
+            function scrollBanner() {
+              $(document).on('scroll', function() {
+                var scrollPos = $(this).scrollTop();
+                $('.parallax-fade-top').css({
+                  'top': (scrollPos / 2) + 'px',
+                  'opacity': 1 - (scrollPos / 700)
+                });
+                $('.parallax-00').css({'top': (scrollPos / -3.5) + 'px'});
+                $('.parallax-01').css({'top': (scrollPos / -2.8) + 'px'});
+                $('.parallax-top-shadow').css({'top': (scrollPos / -2) + 'px'});
+              });
+            }
+            scrollBanner();
+
+            // Case Study Hover Effect
+            $('.case-study-name').on('mouseenter', function() {
+              var index = $(this).index();
+              $('.case-study-name').removeClass('active');
+              $(this).addClass('active');
+              $('.case-study-images li').removeClass('show');
+              $('.case-study-images li').eq(index).addClass('show');
+            });
+
+            // Initialize the first case study image
+            $('.case-study-name').eq(0).trigger('mouseenter');
+          })(jQuery);
+     </script>
 </div>
 <!-- Parallax Wave Before About Section -->
 <div class="container-fluid content-wrapper bg-white">
